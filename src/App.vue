@@ -35,9 +35,9 @@ export default {
     if (process.env.NODE_ENV === 'development'){
   this.baseURL = 'http://localhost:3000/events'
 } else {
-  this.baseURL = 'https://movie-critique-backend.herokuapp.com/'
+  this.baseURL = 'https://schedul-r-backend.herokuapp.com/'
 }
-    axios.get('http://localhost:3000/events')
+    axios.get(this.baseURL)
     .then(res => this.events = res.data)
     .catch(err => console.error(err))
     console.log("DATA FETCHED!");
