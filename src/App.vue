@@ -44,17 +44,8 @@ export default {
   },
   methods: {
 
-    addEvent(newEvent){
-      // axios.post(this.baseURL, newEvent)
-      fetch(this.baseURL, {
-        body: JSON.stringify(newEvent),
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
+    async addEvent(newEvent){
+      axios.post(this.baseURL, newEvent)
       .then(res => this.events = [...this.events, res.data])
       .catch(e => console.error(e))
     },
