@@ -46,7 +46,7 @@ export default {
 
     addEvent(newEvent){
       console.log(newEvent);
-      axios.post(this.baseURL, newEvent)
+      axios.post(this.baseURL, newEvent, headers:{'Content-Type': 'application/json'})
       .then(res => this.events = [...this.events, res.data])
       .catch(e => console.error(e))
       console.log('added');
@@ -55,7 +55,7 @@ export default {
       this.toggleField = !this.toggleField
     },
     deleteEvent(id){
-      axios.delete(`${this.baseURL}${id}`)
+      axios.delete(`${this.baseURL}${id}`, headers:{'Content-Type': 'application/json'})
         .then(this.events = this.events.filter(event => event.id !== id))
         .catch(e => console.error(e))
       // console.log(id);
