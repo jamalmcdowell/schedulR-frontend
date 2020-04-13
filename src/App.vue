@@ -44,9 +44,9 @@ export default {
   },
   methods: {
 
-    async addEvent(newEvent){
+    addEvent(newEvent){
       // axios.post(this.baseURL, newEvent)
-      let response = await fetch(this.baseURL, {
+      fetch(this.baseURL, {
         body: JSON.stringify(newEvent),
         method: 'POST',
         headers: {
