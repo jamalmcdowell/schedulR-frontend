@@ -33,7 +33,7 @@ export default {
   },
   created(){
     if (process.env.NODE_ENV === 'development'){
-  this.baseURL = 'http://localhost:3000/events'
+  this.baseURL = 'http://localhost:3000/events/'
 } else {
   this.baseURL = 'https://schedul-r-backend.herokuapp.com/'
 }
@@ -46,7 +46,7 @@ export default {
 
     addEvent(newEvent){
       console.log(newEvent);
-      axios.post('http://localhost:3000/events', newEvent)
+      axios.post(this.baseURL, newEvent)
       .then(res => this.events = [...this.events, res.data])
       .catch(e => console.error(e))
       console.log('added');
@@ -55,7 +55,7 @@ export default {
       this.toggleField = !this.toggleField
     },
     deleteEvent(id){
-      axios.delete(`http://localhost:3000/events/${id}`)
+      axios.delete(`${this.baseURL}${id}`)
         .then(this.events = this.events.filter(event => event.id !== id))
         .catch(e => console.error(e))
       // console.log(id);
