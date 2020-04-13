@@ -55,7 +55,7 @@ export default {
       this.toggleField = !this.toggleField
     },
     deleteEvent(id){
-      axios.delete(`${this.baseURL}${id}`)
+      axios.delete(`${this.baseURL}events/${id}`)
         .then(this.events = this.events.filter(event => event.id !== id))
         .catch(e => console.error(e))
       // console.log(id);
