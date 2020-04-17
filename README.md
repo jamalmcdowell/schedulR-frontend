@@ -9,7 +9,7 @@ Vue.js for the frontend, Ruby on Rails for the backend. Bcrypt for future author
 ## Approach Taken: 
 Manipulate state to allow for full CRUD. 
 
-#LINKS AND CREDITS
+# LINKS AND CREDITS
 
 ### [Live Page](https://schedul-r.herokuapp.com/)
 
